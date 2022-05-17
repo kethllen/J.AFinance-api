@@ -16,8 +16,14 @@ async function findAllObras(req: Request, res: Response) {
 
   res.status(200).send(obras);
 }
+async function findObra(req: Request, res: Response) {
+  const id= parseInt(req.params.id)
+  const obra = await obrasService.findById(id);
 
+  res.status(200).send(obra);
+}
 export default{
   createObra,
   findAllObras,
+  findObra,
 }

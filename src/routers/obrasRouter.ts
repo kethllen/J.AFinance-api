@@ -17,5 +17,10 @@ obraRouter.get(
   ensureAuthenticatedMiddleware,
   obrasController.findAllObras
 );
+obraRouter.get(
+  "/obras/:id",
+  ensureAuthenticatedMiddleware,
+  obrasController.findObra
+);
 
 export default obraRouter;
