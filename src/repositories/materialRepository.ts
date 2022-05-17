@@ -8,8 +8,12 @@ async function insert(createMaterialData: CreateMaterialData ) {
   });
 }
 
-async function findAll() {
-  return prisma.material.findMany({});
+async function findAll(obraId:number) {
+  return prisma.material.findMany({
+    where:{
+      obraId,
+    }
+  });
 }
 
 export default{

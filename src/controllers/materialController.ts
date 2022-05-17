@@ -10,8 +10,8 @@ async function createMaterial(req: Request, res: Response) {
 }
 
 async function findAllMateriais(req: Request, res: Response) {
-
-  const materiais = await materialService.findAll();
+  const obraId = parseInt(req.params.id);
+  const materiais = await materialService.findAll(obraId);
 
   res.status(200).send(materiais);
 }

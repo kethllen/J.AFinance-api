@@ -18,9 +18,9 @@ async function createMaterial(createMaterialData: CreateMaterialData ) {
 
 }
 
-async function findAll() {
+async function findAll(obraId:number) {
 
-  const materiais = await materialRepository.findAll();
+  const materiais = await materialRepository.findAll(obraId);
 
   return materiais;
 }

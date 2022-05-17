@@ -18,9 +18,9 @@ async function createEntrada(createEntradaData: CreateEntradaData) {
   await obrasRepository.updateValorAtual(createEntradaData.obraId, createEntradaData.valor );
 }
 
-async function findAll() {
+async function findAll(obraId:number) {
 
-  const entradas = await entradaRepository.findAll();
+  const entradas = await entradaRepository.findAll(obraId);
 
   return entradas;
 }

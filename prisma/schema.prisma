@@ -33,7 +33,7 @@ model Obra {
   fechamentos Fechamento[]
   despesas    Despesa[]
   empreitas   Empreita[]
-  pagamentos  Pagamento[]
+
   @@map("obras")
 }
 
@@ -84,11 +84,13 @@ model Funcionario {
 }
 
 model Fechamento {
-  id     Int      @id @default(autoincrement())
-  obra   Obra     @relation(fields: [obraId], references: [id])
-  obraId Int
-  data   DateTime @default(now())
-  valor  Int
+  id         Int         @id @default(autoincrement())
+  obra       Obra        @relation(fields: [obraId], references: [id])
+  obraId     Int
+  name       String
+  data       DateTime    @default(now())
+  valor      Int
+  pagamentos Pagamento[]
 
   @@map("fechamentos")
 }
@@ -109,8 +111,8 @@ model Empreita {
 
 model Pagamento {
   id            Int         @id @default(autoincrement())
-  obra          Obra        @relation(fields: [obraId], references: [id])
-  obraId        Int
+  fechamento    Fechamento  @relation(fields: [fechaentoId], references: [id])
+  fechaentoId   Int
   empreita      Empreita    @relation(fields: [empreitaId], references: [id])
   empreitaId    Int
   funcionario   Funcionario @relation(fields: [funcionarioId], references: [id])

@@ -10,8 +10,8 @@ async function createEntrada(req: Request, res: Response) {
 }
 
 async function findAllEntradas(req: Request, res: Response) {
-
-  const entradas = await entradaService.findAll();
+  const obraId = parseInt(req.params.id);
+  const entradas = await entradaService.findAll(obraId);
 
   res.status(200).send(entradas);
 }

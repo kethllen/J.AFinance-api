@@ -8,8 +8,13 @@ async function insert(createEntradaData: CreateEntradaData) {
   });
 }
 
-async function findAll() {
-  return prisma.entrada.findMany({});
+async function findAll(obraId:number) {
+  
+  return prisma.entrada.findMany({
+    where:{
+      obraId,
+    }
+  });
 }
 
 export default{
