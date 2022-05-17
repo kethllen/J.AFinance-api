@@ -6,6 +6,11 @@ async function findById(id: number) {
     where: {
       id,
     },
+    include:{
+      materiais:true,
+      fechamentos:true,
+      despesas:true,
+    },
   });
 }
 

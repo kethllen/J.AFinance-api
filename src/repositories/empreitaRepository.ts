@@ -23,9 +23,21 @@ async function findAll(obraId:number) {
   });
 }
 
+async function updateValorAtual(id: number, valor: number) {
+  return prisma.empreita.update({
+    where: {
+      id: id,
+    },
+    data: {
+      valorPago:{
+        increment: valor,
+      }
+    },
+  });
+}
 export default{
   findAll,
   findById,
   insert,
-
+  updateValorAtual,
 }

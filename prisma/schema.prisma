@@ -111,14 +111,15 @@ model Empreita {
 
 model Pagamento {
   id            Int         @id @default(autoincrement())
-  fechamento    Fechamento  @relation(fields: [fechaentoId], references: [id])
-  fechaentoId   Int
+  fechamento    Fechamento  @relation(fields: [fechamentoId], references: [id])
+  fechamentoId  Int
   empreita      Empreita    @relation(fields: [empreitaId], references: [id])
   empreitaId    Int
   funcionario   Funcionario @relation(fields: [funcionarioId], references: [id])
   funcionarioId Int
   valor         Int
   quantDias     Int
+  valorTotal    Int
 
   @@map("pagamentos")
 }
