@@ -6,6 +6,7 @@ import materialRouter from "./materialRouter.js";
 import fechamentoRouter from "./fechamentoRouter.js";
 import despesaRouter from "./despesaRouter.js";
 import funcionarioRouter from "./funcionarioRouter.js";
+import empreitaRouter from "./empreitaRouter.js";
 
 const router = Router();
 router.use(userRouter);
@@ -15,5 +16,6 @@ router.use(materialRouter);
 router.use(fechamentoRouter);
 router.use(despesaRouter);
 router.use(funcionarioRouter);
+router.use(empreitaRouter);
 
 export default router;

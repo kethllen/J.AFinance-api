@@ -13,7 +13,7 @@ funcionarioRouter.post(
   funcionarioController.createFuncionario
 );
 funcionarioRouter.get(
-  "/funcionario",
+  "/funcionarios",
   ensureAuthenticatedMiddleware,
   funcionarioController.findAllFuncionarios
 );

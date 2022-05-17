@@ -13,7 +13,7 @@ entradaRouter.post(
   entradaController.createEntrada
 );
 entradaRouter.get(
-  "/entradas/:id",
+  "/obras/:id/entradas",
   ensureAuthenticatedMiddleware,
   entradaController.findAllEntradas
 );

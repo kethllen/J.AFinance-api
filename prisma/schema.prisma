@@ -103,7 +103,7 @@ model Empreita {
   funcionarioId Int
   valor         Int
   description   String
-  valorPago     Int
+  valorPago     Int         @default(0)
 
   pagamentos Pagamento[]
   @@map("empreitas")

@@ -13,7 +13,7 @@ despesaRouter.post(
   despesaController.createDespesa
 );
 despesaRouter.get(
-  "/despesas/:id",
+  "/obras/:id/despesas",
   ensureAuthenticatedMiddleware,
   despesaController.findAllDespesas
 );

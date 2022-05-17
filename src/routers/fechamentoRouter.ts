@@ -13,7 +13,7 @@ fechamentoRouter.post(
   fechamentoController.createFechamento
 );
 fechamentoRouter.get(
-  "/fechamentos/:id",
+  "/obras/:id/fechamentos",
   ensureAuthenticatedMiddleware,
   fechamentoController.findAllFechamentos
 );

@@ -13,7 +13,7 @@ materialRouter.post(
   materialController.createMaterial
 );
 materialRouter.get(
-  "/materiais/:id",
+  "/obras/:id/materiais",
   ensureAuthenticatedMiddleware,
   materialController.findAllMateriais
 );
