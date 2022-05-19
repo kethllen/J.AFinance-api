@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import obrasService from "../services/obrasService.js";
 
 async function createObra(req: Request, res: Response) {
-  const user = res.locals.user();
+  const user = res.locals.user;
   const obra = req.body;
 
   await obrasService.createObra({userId: user.id, ...obra});
