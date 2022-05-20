@@ -10,12 +10,13 @@ export async function ensureAuthenticatedMiddleware(
   res: Response,
   next: NextFunction
 ) {
+
   const authorization = req.headers["authorization"];
   if (!authorization) throw unauthorizedError("Missing authorization header");
 
-  const token = authorization.replace("Bearer ", "");
+  const token = authorization;
   if (!token) throw unauthorizedError("Missing token");
-
+ 
   try {
     const { userId } = jwt.verify(token, process.env.JWT_SECRET) as {
       userId: number;

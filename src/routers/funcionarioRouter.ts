@@ -22,5 +22,11 @@ funcionarioRouter.get(
   ensureAuthenticatedMiddleware,
   funcionarioController.findFuncionario
 );
+funcionarioRouter.put(
+  "/funcionarios/:id",
+  ensureAuthenticatedMiddleware,
+  validateSchemaMiddleware(funcionarioSchema),
+  funcionarioController.updateFuncionario
+);
 
 export default funcionarioRouter;

@@ -38,33 +38,33 @@ model Obra {
 }
 
 model Entrada {
-  id     Int      @id @default(autoincrement())
-  obra   Obra     @relation(fields: [obraId], references: [id])
+  id     Int    @id @default(autoincrement())
+  obra   Obra   @relation(fields: [obraId], references: [id])
   obraId Int
-  data   DateTime @default(now())
+  data   String
   valor  Int
 
   @@map("entradas")
 }
 
 model Material {
-  id          Int      @id @default(autoincrement())
-  obra        Obra     @relation(fields: [obraId], references: [id])
+  id          Int    @id @default(autoincrement())
+  obra        Obra   @relation(fields: [obraId], references: [id])
   obraId      Int
   description String
   fornecedor  String
-  data        DateTime @default(now())
+  data        String
   valor       Int
 
   @@map("materiais")
 }
 
 model Despesa {
-  id          Int      @id @default(autoincrement())
-  obra        Obra     @relation(fields: [obraId], references: [id])
+  id          Int    @id @default(autoincrement())
+  obra        Obra   @relation(fields: [obraId], references: [id])
   obraId      Int
   description String
-  data        DateTime @default(now())
+  data        String
   valor       Int
 
   @@map("despesas")
@@ -88,7 +88,7 @@ model Fechamento {
   obra       Obra        @relation(fields: [obraId], references: [id])
   obraId     Int
   name       String
-  data       DateTime    @default(now())
+  data       String
   valor      Int
   pagamentos Pagamento[]
 

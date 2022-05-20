@@ -18,7 +18,9 @@ if (existingFuncionario ) throw conflictError("Name must be unique");
  
  await funcionarioRepository.insert({ ...createFuncionarioData});
 }
-
+async function updateFuncionario(id:number ,createFuncionarioData: CreateFuncionarioData) {
+  await funcionarioRepository.update(id, createFuncionarioData);
+  }
 async function findAll() {
 
   const funcionarios = await funcionarioRepository.findAll();
@@ -36,4 +38,5 @@ async function findById(id:number) {
   createFuncionario,
   findAll,
   findById,
+  updateFuncionario
  };

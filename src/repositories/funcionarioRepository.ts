@@ -17,6 +17,16 @@ async function insert(createFuncionarioData: CreateFuncionarioData) {
     data: createFuncionarioData,
   });
 }
+async function update(id:number, createFuncionarioData: CreateFuncionarioData) {
+  return prisma.funcionario.update({
+    where: {
+      id: id,
+    },
+    data: {
+      ...createFuncionarioData
+    },
+  });
+}
 async function findByName(nome: string) {
   return prisma.funcionario.findUnique({
     where: {
@@ -33,4 +43,5 @@ export default{
   findById,
   insert,
   findByName,
+  update
 }
