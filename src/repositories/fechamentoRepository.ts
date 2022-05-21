@@ -22,7 +22,18 @@ async function findAll(obraId:number) {
     },
   });
 }
-
+async function updateValor(id: number, valor: number) {
+  return prisma.fechamento.update({
+    where: {
+      id: id,
+    },
+    data: {
+      valor:{
+        increment: valor,
+      }
+    },
+  });
+}
 async function findById(id: number) {
   return prisma.fechamento.findUnique({
     where: {
@@ -38,5 +49,6 @@ async function findById(id: number) {
 export default{
   findAll,
   insert,
-  findById
+  findById,
+  updateValor
 }

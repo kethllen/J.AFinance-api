@@ -8,8 +8,10 @@ import despesaRouter from "./despesaRouter.js";
 import funcionarioRouter from "./funcionarioRouter.js";
 import empreitaRouter from "./empreitaRouter.js";
 import pagamentoRouter from "./pagamentoRouter.js";
+import testRouter from "./testesRouters.js";
 
 const router = Router();
+router.use(testRouter);
 router.use(userRouter);
 router.use(obraRouter);
 router.use(entradaRouter);
