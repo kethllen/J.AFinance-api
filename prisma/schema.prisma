@@ -84,12 +84,13 @@ model Funcionario {
 }
 
 model Fechamento {
-  id         Int         @id @default(autoincrement())
-  obra       Obra        @relation(fields: [obraId], references: [id])
-  obraId     Int
-  name       String
-  data       String
-  valor      Int
+  id     Int    @id @default(autoincrement())
+  obra   Obra   @relation(fields: [obraId], references: [id])
+  obraId Int
+  name   String
+  data   String
+  valor  Int
+
   pagamentos Pagamento[]
 
   @@map("fechamentos")

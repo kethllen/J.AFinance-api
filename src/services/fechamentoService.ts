@@ -14,9 +14,8 @@ async function createFechamento(createFechamentoData: CreateFechamentoData) {
 
 const existingObra = await obrasRepository.findById(createFechamentoData.obraId);
 if (!existingObra) throw notFoundError("Obra not found");
-  const date = dayjs().format('DD-MM-YYYY');
-  const name= existingObra.name+"-"+date;
- await fechamentoRepository.insert({ ...createFechamentoData, name});
+  const name= existingObra.name+"-"+createFechamentoData.data;
+ await fechamentoRepository.insert({ ...createFechamentoData, name, valor:0});
 }
 
 async function findAll(obraId:number) {

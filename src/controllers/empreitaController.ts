@@ -10,7 +10,7 @@ async function createEmpreita(req: Request, res: Response) {
 }
 
 async function findAllEmpreitas(req: Request, res: Response) {
-  const obraId = parseInt(req.params.obraid);
+  const obraId = parseInt(req.params.id);
   const empreitas = await empreitaService.findAll(obraId);
 
   res.status(200).send(empreitas);

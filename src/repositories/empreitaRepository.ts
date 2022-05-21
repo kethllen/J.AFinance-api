@@ -19,6 +19,9 @@ async function findAll(obraId:number) {
   return prisma.empreita.findMany({
     where:{
       obraId,
+    },
+    include:{
+      funcionario:true
     }
   });
 }
