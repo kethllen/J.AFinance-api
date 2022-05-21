@@ -12,7 +12,14 @@ async function findAll(obraId:number) {
   return prisma.fechamento.findMany({
     where:{
       obraId,
-    }
+    },
+    include:{
+      pagamentos:{
+        include:{
+          funcionario:true
+        }
+      }
+    },
   });
 }
 

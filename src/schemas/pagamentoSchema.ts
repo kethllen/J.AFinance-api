@@ -6,6 +6,6 @@ export const pagamentoSchema = Joi.object<CreatePagamentoData>({
   empreitaId: Joi.number().required(),
   funcionarioId: Joi.number().required(),
   valor: Joi.number().required(),
-  quantDias: Joi.string().required(),
+  quantDias: Joi.number().required(),
   valorTotal: Joi.number(),
 });
