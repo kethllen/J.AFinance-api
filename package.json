@@ -5,7 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx prisma migrate dev && node dist/server.js",
+    "start": "node dist/server.js",
     "build": "tsc",
     "watch-node": "nodemon dist/server.js",
     "watch-ts": "tsc -w",
