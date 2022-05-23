@@ -37,9 +37,9 @@ async function findById(id:number) {
 
   return obra;
 }
-async function findAll() {
+async function findAll(user:number) {
 
-  const obras = await obrasRepository.findAll();
+  const obras = await obrasRepository.findAll(user);
 
   return obras;
 }

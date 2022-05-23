@@ -39,8 +39,10 @@ async function findByName(name: string) {
     },
   });
 }
-async function findAll() {
-  return prisma.obra.findMany({});
+async function findAll(user:number) {
+  return prisma.obra.findMany({where: {
+    userId : user,
+  },});
 }
 
 export default{
