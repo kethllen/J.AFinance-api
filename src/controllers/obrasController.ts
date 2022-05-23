@@ -11,8 +11,8 @@ async function createObra(req: Request, res: Response) {
 }
 
 async function findAllObras(req: Request, res: Response) {
-  const user =parseInt(res.locals.user);
-  const obras = await obrasService.findAll(user);
+  const user =res.locals.user;
+  const obras = await obrasService.findAll(user.id);
 
   res.status(200).send(obras);
 }
